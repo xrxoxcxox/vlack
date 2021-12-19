@@ -7,5 +7,9 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials"
   ],
-  "framework": "@storybook/react"
+  "framework": "@storybook/react",
+  babel: async (options) => ({
+    ...options,
+    presets: [...options.presets, "@emotion/babel-preset-css-prop"]
+  })
 }
