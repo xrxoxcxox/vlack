@@ -105,3 +105,6 @@ dist
 
 # Storybook build output
 storybook-static
+
+# Rollup build output
+dist
