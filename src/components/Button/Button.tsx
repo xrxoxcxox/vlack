@@ -1,30 +1,18 @@
+import { ReactNode } from 'react'
 import { css } from '@emotion/react'
-import { color } from '../../foundations/theme'
+import { color, fontSize } from 'src/foundations/theme'
 
-export interface ButtonProps {
-  primary?: boolean
-  backgroundColor?: string
-  size?: 'small' | 'medium' | 'large'
-  label: string
-  onClick?: () => void
+type ButtonProps = JSX.IntrinsicElements['button']
+
+export interface Props extends ButtonProps {
+  children: ReactNode
+  priority?: 'primary' | 'secondary'
 }
 
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? styles.primary : styles.secondary
+export const Button = ({ priority = 'primary', children }: Props) => {
   return (
-    <button
-      type='button'
-      css={[styles.button, styles[size], mode]}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
+    <button type='button' css={[styles.button, styles[priority]]}>
+      {children}
     </button>
   )
 }
@@ -32,32 +20,21 @@ export const Button = ({
 const styles = {
   button: css`
     border: 0;
-    border-radius: 3em;
+    border-radius: 8px;
     cursor: pointer;
     display: inline-block;
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: ${fontSize.m};
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.5;
+    padding: 8px 16px;
   `,
   primary: css`
-    background-color: ${color.gray[100]};
-    color: white;
+    background-color: ${color.gray.primary};
+    color: ${color.gray.onPrimary};
   `,
   secondary: css`
-    background-color: transparent;
-    box-shadow: rgb(0 0 0 / 15%) 0 0 0 1px inset;
-    color: #333;
-  `,
-  small: css`
-    font-size: 12px;
-    padding: 10px 16px;
-  `,
-  medium: css`
-    font-size: 14px;
-    padding: 11px 20px;
-  `,
-  large: css`
-    font-size: 16px;
-    padding: 12px 24px;
+    background-color: ${color.gray.background};
+    box-shadow: ${color.gray.secondary} 0 0 0 2px inset;
+    color: ${color.text.primary};
   `,
 }
