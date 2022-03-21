@@ -1,3 +1,7 @@
+import { Fragment } from 'react'
+import { Global } from '@emotion/react'
+import { root } from '../src/foundations/theme'
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -7,3 +11,12 @@ export const parameters = {
     },
   },
 }
+
+export const decorators = [
+  (Story) => (
+    <Fragment>
+      <Global styles={root} />
+      <Story />
+    </Fragment>
+  ),
+]
