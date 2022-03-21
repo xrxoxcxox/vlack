@@ -1,6 +1,5 @@
 import { Fragment } from 'react'
-import { Global } from '@emotion/react'
-import { root } from '../src/foundations/theme'
+import { GlobalStyle } from 'src/foundations/GlobalStyle.tsx'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -15,7 +14,7 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <Fragment>
-      <Global styles={root} />
+      <GlobalStyle />
       <Story />
     </Fragment>
   ),
