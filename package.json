@@ -4,6 +4,10 @@
   "homepage": "https://github.com/xrxoxcxox/vlack#readme",
   "license": "MIT",
   "author": "Keisuke Watanuki",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
   "scripts": {
     "lint": "npm-run-all -p lint:*",
     "lint:eslint": "eslint .",
@@ -15,13 +19,17 @@
     "format:stylelint": "stylelint . --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "prepare": "npm-run-all -s husky build",
+    "lint-staged": "lint-staged",
+    "build": "rimraf dist && rollup -c",
+    "husky": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@emotion/babel-preset-css-prop": "^11.2.0",
     "@emotion/react": "^11.7.1",
+    "@rollup/plugin-node-resolve": "^13.1.2",
+    "@rollup/plugin-typescript": "^8.3.0",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
@@ -43,6 +51,9 @@
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.62.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "stylelint": "^14.1.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^24.0.0",
@@ -52,7 +63,8 @@
   "peerDependencies": {
     "@emotion/react": "^11.7.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "tslib": "^2.3.1"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
