@@ -1,16 +1,21 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
+    // Basic
     "module": "esnext",
-    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "declaration": true,
     "sourceMap": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    // Strict Type Checks
     "strict": true,
+    // Module Resolution
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    // Advanced
+    "jsxImportSource": "@emotion/react",
     "skipLibCheck": true,
-    "declaration": true
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*"]
 }

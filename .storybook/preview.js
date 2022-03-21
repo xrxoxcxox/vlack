@@ -1,3 +1,6 @@
+import { Fragment } from 'react'
+import { GlobalStyle } from 'src/foundations/GlobalStyle.tsx'
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -7,3 +10,12 @@ export const parameters = {
     },
   },
 }
+
+export const decorators = [
+  (Story) => (
+    <Fragment>
+      <GlobalStyle />
+      <Story />
+    </Fragment>
+  ),
+]
