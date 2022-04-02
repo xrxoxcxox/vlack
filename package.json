@@ -22,7 +22,8 @@
     "prepare": "npm-run-all -s husky build",
     "lint-staged": "lint-staged",
     "build": "rimraf dist && rollup -c",
-    "husky": "husky install"
+    "husky": "husky install",
+    "chromatic": "chromatic"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
@@ -40,6 +41,7 @@
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.5.3",
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.27.1",
@@ -64,8 +66,10 @@
   "peerDependencies": {
     "@emotion/react": "^11.7.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "tslib": "^2.3.1"
+    "react-dom": "^17.0.2"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
