@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 import { css } from '@emotion/react'
-import { color, fontSize } from 'src/styles/tokens'
 
 type ButtonProps = JSX.IntrinsicElements['button']
 
@@ -23,18 +22,18 @@ const styles = {
     border-radius: 8px;
     cursor: pointer;
     display: inline-block;
-    font-size: ${fontSize.m};
+    font-size: var(--font-size-m);
     font-weight: 700;
     line-height: 1.5;
     padding: 8px 16px;
   `,
   primary: css`
-    background-color: ${color.gray.primary};
-    color: ${color.gray.onPrimary};
+    background-color: var(--color-gray-primary);
+    color: var(--color-gray-on-primary);
   `,
   secondary: css`
-    background-color: ${color.gray.background};
-    box-shadow: ${color.gray.secondary} 0 0 0 2px inset;
-    color: ${color.text.primary};
+    background-color: var(--color-gray-background);
+    box-shadow: var(--color-gray-secondary) 0 0 0 2px inset;
+    color: var(--color-text-primary);
   `,
 }
