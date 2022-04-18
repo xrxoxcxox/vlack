@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { css } from '@emotion/react'
-import { color, fontSize } from 'src/foundations/tokens'
+import { color, fontSize } from 'src/styles/tokens'
 
 type ButtonProps = JSX.IntrinsicElements['button']
 

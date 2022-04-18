@@ -1,4 +1,4 @@
-export * from './foundations/tokens'
-export * from './foundations/GlobalStyle'
+export * from 'src/styles/tokens'
+export * from 'src/styles/GlobalStyles'
 
-export * from './components/Button'
+export * from 'src/components/Button'
