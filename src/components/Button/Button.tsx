@@ -22,18 +22,18 @@ const styles = {
     border-radius: 8px;
     cursor: pointer;
     display: inline-block;
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-2xl);
     font-weight: 700;
     line-height: 1.5;
-    padding: 8px 16px;
+    padding: 16px 28px;
   `,
   primary: css`
-    background-color: var(--color-gray-primary);
+    background-color: #f00;
     color: var(--color-gray-on-primary);
   `,
   secondary: css`
     background-color: var(--color-gray-background);
-    box-shadow: var(--color-gray-secondary) 0 0 0 2px inset;
+    box-shadow: #f00 0 0 0 2px inset;
     color: var(--color-text-primary);
   `,
 }
