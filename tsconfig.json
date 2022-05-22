@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2020",
     // Basic
     "module": "esnext",
     "jsx": "react-jsx",
@@ -10,7 +10,6 @@
     "strict": true,
     // Module Resolution
     "moduleResolution": "node",
-    "baseUrl": "./",
     "esModuleInterop": true,
     // Advanced
     "jsxImportSource": "@emotion/react",
