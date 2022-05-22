@@ -1,16 +1,19 @@
-import { ReactNode } from 'react'
 import { css } from '@emotion/react'
 
 type ButtonProps = JSX.IntrinsicElements['button']
 
 export interface Props extends ButtonProps {
-  children: ReactNode
+  children: string
   priority?: 'primary' | 'secondary'
 }
 
-export const Button = ({ priority = 'primary', children }: Props) => {
+export const Button = ({ children, priority = 'primary', ...props }: Props) => {
   return (
-    <button type='button' css={[styles.button, styles[priority]]}>
+    <button
+      type={props.type ? props.type : 'button'}
+      css={[styles.button, styles[priority]]}
+      {...props}
+    >
       {children}
     </button>
   )
@@ -26,6 +29,9 @@ const styles = {
     font-weight: 700;
     line-height: 1.5;
     padding: 8px 16px;
+    &:disabled {
+      cursor: not-allowed;
+    }
   `,
   primary: css`
     background-color: var(--color-gray-primary);

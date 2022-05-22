@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { GlobalStyles } from 'src/styles/GlobalStyles'
+import { GlobalStyles } from '../src/styles/GlobalStyles'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

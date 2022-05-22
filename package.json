@@ -1,6 +1,12 @@
 {
   "name": "vlack",
   "version": "0.1.0",
+  "description": "Black-based UI framework for React.",
+  "keywords": [
+    "UI",
+    "UI Framework",
+    "Component Library"
+  ],
   "homepage": "https://github.com/xrxoxcxox/vlack#readme",
   "license": "MIT",
   "author": "Keisuke Watanuki",
@@ -8,6 +14,7 @@
     "dist"
   ],
   "main": "dist/index.js",
+  "repository": "github:xrxoxcxox/vlack",
   "scripts": {
     "lint": "npm-run-all -p lint:*",
     "lint:eslint": "eslint .",
@@ -56,11 +63,11 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.62.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
     "stylelint": "^14.1.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^24.0.0",
     "stylelint-order": "^5.0.0",
-    "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typescript": "^4.5.4"
   },
   "peerDependencies": {
