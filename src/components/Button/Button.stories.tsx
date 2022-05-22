@@ -4,12 +4,20 @@ import { Button } from './Button'
 
 export default {
   title: 'Button',
+  args: {
+    children: 'Click me',
+  },
   component: Button,
 } as ComponentMeta<typeof Button>
 
-export const Default: ComponentStoryObj<typeof Button> = {
+export const Primary: ComponentStoryObj<typeof Button> = {
   args: {
-    children: 'Click me',
     priority: 'primary',
+  },
+}
+
+export const Secondary: ComponentStoryObj<typeof Button> = {
+  args: {
+    priority: 'secondary',
   },
 }
