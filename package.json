@@ -1,6 +1,12 @@
 {
   "name": "vlack",
   "version": "0.1.0",
+  "description": "Black-based UI framework for React.",
+  "keywords": [
+    "UI",
+    "UI Framework",
+    "Component Library"
+  ],
   "homepage": "https://github.com/xrxoxcxox/vlack#readme",
   "license": "MIT",
   "author": "Keisuke Watanuki",
@@ -8,6 +14,7 @@
     "dist"
   ],
   "main": "dist/index.js",
+  "repository": "github:xrxoxcxox/vlack",
   "scripts": {
     "lint": "npm-run-all -p lint:*",
     "lint:eslint": "eslint .",
