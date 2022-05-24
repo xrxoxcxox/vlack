@@ -6,6 +6,7 @@ export default {
   title: 'Button',
   args: {
     children: 'Click me',
+    disabled: false,
   },
   component: Button,
 } as ComponentMeta<typeof Button>
