@@ -25,8 +25,8 @@ To use vlack, please follow these steps.
 The following example assumes Next.js.
 
 ```tsx
-import type { AppProps } from "next/app";
-import { GlobalStyles } from "vlack";
+import type { AppProps } from 'next/app'
+import { GlobalStyles } from 'vlack'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -34,15 +34,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyles />
       <Component {...pageProps} />
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
 ```
 
 ### Now you can start using components.
-
-
 
 ```tsx
 import { Button } from 'vlack'
