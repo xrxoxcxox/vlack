@@ -10,8 +10,8 @@ export interface Props extends ButtonProps {
 export const Button = ({ children, priority = 'primary', ...props }: Props) => {
   return (
     <button
-      type={props.type ? props.type : 'button'}
       css={[styles.button, styles[priority]]}
+      type={props.type ? props.type : 'button'}
       {...props}
     >
       {children}
@@ -23,6 +23,8 @@ const styles = {
   button: css({
     border: 0,
     borderRadius: 8,
+    borderStyle: 'solid',
+    borderWidth: 2,
     cursor: 'pointer',
     display: 'inline-block',
     fontSize: 'var(--font-size-m)',
@@ -36,22 +38,23 @@ const styles = {
     },
   }),
   primary: css({
-    backgroundColor: 'var(--color-gray-primary)',
-    color: 'var(--color-gray-on-primary)',
+    backgroundColor: 'var(--color-gray-80)',
+    borderColor: 'transparent',
+    color: 'var(--color-gray-10)',
     '@media (hover: hover) and (pointer: fine)': {
       '&:hover:not(:disabled)': {
-        backgroundColor: 'var(--color-gray-primary-variant)',
+        backgroundColor: 'var(--color-gray-90)',
+        color: 'var(--color-gray-0)',
       },
     },
   }),
   secondary: css({
-    backgroundColor: 'var(--color-gray-background)',
-    boxShadow: 'var(--color-gray-secondary) 0 0 0 2px inset',
-    color: 'var(--color-text-primary)',
+    backgroundColor: 'transparent',
+    borderColor: 'var(--color-gray-50)',
+    color: 'currentcolor',
     '@media (hover: hover) and (pointer: fine)': {
       '&:hover:not(:disabled)': {
-        backgroundColor: 'var(--color-gray-background-variant)',
-        boxShadow: 'var(--color-gray-secondary-variant) 0 0 0 2px inset',
+        borderColor: 'var(--color-gray-80)',
       },
     },
   }),

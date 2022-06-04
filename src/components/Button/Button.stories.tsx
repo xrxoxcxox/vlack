@@ -4,11 +4,11 @@ import { Button } from './Button'
 
 export default {
   title: 'Button',
+  component: Button,
   args: {
     children: 'Click me',
     disabled: false,
   },
-  component: Button,
 } as ComponentMeta<typeof Button>
 
 export const Primary: ComponentStoryObj<typeof Button> = {
