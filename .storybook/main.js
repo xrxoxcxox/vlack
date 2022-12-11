@@ -8,10 +8,6 @@ module.exports = {
     builder: '@storybook/builder-vite',
   },
   framework: '@storybook/react',
-  babel: async (options) => ({
-    ...options,
-    presets: [...options.presets, '@emotion/babel-preset-css-prop'],
-  }),
   async viteFinal(config) {
     config.plugins = config.plugins.filter(
       (plugin) =>
