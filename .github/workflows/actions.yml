@@ -1,0 +1,52 @@
+name: Actions
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  confirm-whether-to-execute-actions:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: xt0rted/block-autosquash-commits-action@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+  setup-node:
+    needs:
+      - confirm-whether-to-execute-actions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'yarn'
+
+  run-linters:
+    needs:
+      - setup-node
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: yarn install
+      - uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
+          prettier: true
+
+  deploy-chromatic:
+    needs:
+      - setup-node
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: yarn install
+      - uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
