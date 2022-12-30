@@ -16,19 +16,19 @@
   "main": "dist/index.js",
   "repository": "github:xrxoxcxox/vlack",
   "scripts": {
-    "lint": "npm-run-all -p lint:*",
-    "lint:eslint": "eslint .",
-    "lint:prettier": "prettier . --check",
-    "lint:stylelint": "stylelint .",
+    "build": "rimraf dist && rollup -c",
+    "chromatic": "chromatic",
     "format": "npm-run-all -p format:*",
     "format:eslint": "eslint . --fix",
     "format:prettier": "prettier . --write",
     "format:stylelint": "stylelint . --fix",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "lint": "npm-run-all -p lint:*",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier . --check",
+    "lint:stylelint": "stylelint .",
     "prepack": "npm run build",
-    "build": "rimraf dist && rollup -c",
-    "chromatic": "chromatic"
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
