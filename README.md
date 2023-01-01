@@ -4,13 +4,17 @@ vlack is a black-based UI toolkit for React.
 
 [Figma data](https://www.figma.com/community/file/1110281395043583052)
 
+> **Warning**
+> This library is still in an experimental stage.
+> Destructive changes may be made without notice.
+
 ## Installation
 
 ```sh
 # with npm
 npm i vlack @emotion/react
 
-# with
+# with yarn
 yarn add vlack @emotion/react
 ```
 
@@ -45,5 +49,11 @@ export default MyApp
 ```tsx
 import { Button } from 'vlack'
 
-const Page = () => <Button>This is "v"lack button</Button>
+function Page() {
+  return (
+    <div>
+      <Button>This is a "v"lack button</Button>
+    </div>
+  )
+}
 ```
