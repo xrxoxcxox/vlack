@@ -1,5 +1,6 @@
 import { css } from '@emotion/react'
 import { useId } from 'react'
+import { Text } from '../Text'
 
 type InputProps = JSX.IntrinsicElements['input']
 
@@ -14,12 +15,13 @@ export const Textfield = ({ label, errorMessage, ...props }: Props) => {
   return (
     <div css={styles.wrapper}>
       {!!label && (
-        <label
+        <Text
+          as='label'
           css={[styles.label, !!errorMessage && styles.errorLabel]}
           htmlFor={textfieldId}
         >
           {label}
-        </label>
+        </Text>
       )}
       <input
         aria-errormessage={errorMessageId}
@@ -31,9 +33,9 @@ export const Textfield = ({ label, errorMessage, ...props }: Props) => {
         {...props}
       />
       {!!errorMessage && (
-        <span css={styles.errorMessage} id={errorMessageId}>
+        <Text css={styles.errorMessage} id={errorMessageId}>
           {errorMessage}
-        </span>
+        </Text>
       )}
     </div>
   )
@@ -61,6 +63,7 @@ const styles = {
     borderRadius: 8,
     borderStyle: 'solid',
     borderWidth: 1,
+    color: 'currentcolor',
     fontSize: 'var(--font-size-m)',
     lineHeight: 'var(--line-height-m)',
     padding: '8px 16px',
