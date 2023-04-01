@@ -1,4 +1,3 @@
-import { css } from '@emotion/react'
 import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react'
 
 type TextProps<C extends ElementType> = {
@@ -13,50 +12,18 @@ type Props<C extends ElementType> = PropsWithChildren<TextProps<C>> &
 export const Text = <C extends ElementType = 'span'>({
   children,
   as,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   size = 'm',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   bold = false,
   ...elementProps
 }: Props<C>) => {
   const Component = as || 'span'
   return (
     <Component
-      css={[styles[size], styles[`${bold ? 'bold' : 'normal'}`]]}
       {...elementProps}
     >
       {children}
     </Component>
   )
-}
-
-const styles = {
-  xs: css({
-    fontSize: 'var(--font-size-xs)',
-  }),
-  s: css({
-    fontSize: 'var(--font-size-s)',
-  }),
-  m: css({
-    fontSize: 'var(--font-size-m)',
-  }),
-  l: css({
-    fontSize: 'var(--font-size-l)',
-  }),
-  xl: css({
-    fontSize: 'var(--font-size-xl)',
-  }),
-  '2xl': css({
-    fontSize: 'var(--font-size-2xl)',
-  }),
-  '3xl': css({
-    fontSize: 'var(--font-size-3xl)',
-  }),
-  '4xl': css({
-    fontSize: 'var(--font-size-4xl)',
-  }),
-  normal: css({
-    fontWeight: 400,
-  }),
-  bold: css({
-    fontWeight: 700,
-  }),
 }
