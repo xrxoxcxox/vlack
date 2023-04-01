@@ -10,7 +10,7 @@ export default defineConfig({
     },
     sourcemap: true,
     rollupOptions: {
-      external: [/^react/, /^@emotion/],
+      external: [/^react/],
       output: [
         {
           format: 'esm',
