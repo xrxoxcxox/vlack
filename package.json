@@ -33,7 +33,6 @@
     "storybook:build": "storybook build"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.2",
     "@storybook/addon-actions": "^7.0.2",
@@ -48,7 +47,6 @@
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "@vitejs/plugin-react-swc": "^3.2.0",
-    "babel-loader": "^8.2.5",
     "chromatic": "^6.5.4",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
