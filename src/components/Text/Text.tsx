@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react'
+import styles from './Text.module.css'
 
 type TextProps<C extends ElementType> = {
   as?: C
@@ -12,15 +13,14 @@ type Props<C extends ElementType> = PropsWithChildren<TextProps<C>> &
 export const Text = <C extends ElementType = 'span'>({
   children,
   as,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   size = 'm',
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   bold = false,
   ...elementProps
 }: Props<C>) => {
   const Component = as || 'span'
   return (
     <Component
+      className={`${styles[size]} ${styles[`${bold ? 'bold' : 'normal'}`]}`}
       {...elementProps}
     >
       {children}

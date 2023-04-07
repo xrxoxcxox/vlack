@@ -18,7 +18,7 @@
   "types": "dist/types/index.d.ts",
   "repository": "github:xrxoxcxox/vlack",
   "scripts": {
-    "build": "rimraf dist && tsc --project tsconfig.build.json && vite build",
+    "build": "rimraf dist && tsc --project tsconfig.build.json && vite build && mv dist/esm/style.css dist/style.css",
     "chromatic": "chromatic",
     "format": "npm-run-all -p format:*",
     "format:eslint": "eslint . --fix",
