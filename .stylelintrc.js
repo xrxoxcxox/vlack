@@ -1,7 +1,10 @@
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
-  customSyntax: '@stylelint/postcss-css-in-js',
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-prettier',
+    'stylelint-config-css-modules',
+  ],
   rules: {
-    'rule-empty-line-before': 'never',
+    'selector-class-pattern': '^[a-z]+([a-zA-Z0-9]*)*$',
   },
 }
