@@ -16,9 +16,18 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/es/index.mjs"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "repository": "github:xrxoxcxox/vlack",
   "scripts": {
-    "build": "rimraf dist && tsc --project tsconfig.build.json && vite build && mv dist/esm/style.css dist/style.css",
+    "build": "npm-run-all -p build:*",
+    "build:modules": "vite build",
+    "build:types": "tsc --project tsconfig.build.json",
     "chromatic": "chromatic",
     "format": "npm-run-all -p format:*",
     "format:eslint": "eslint . --fix",
@@ -28,6 +37,7 @@
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
     "lint:stylelint": "stylelint .",
+    "prebuild": "rimraf dist",
     "prepack": "npm run build",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build"
