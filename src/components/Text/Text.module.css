@@ -1,0 +1,41 @@
+.xs {
+  font-size: var(--font-size-xs);
+}
+
+.s {
+  font-size: var(--font-size-s);
+}
+
+.m {
+  font-size: var(--font-size-m);
+}
+
+.l {
+  font-size: var(--font-size-l);
+}
+
+.xl {
+  font-size: var(--font-size-xl);
+}
+
+/* stylelint-disable selector-class-pattern */
+.\32xl /* It means 2xl */ {
+  font-size: var(--font-size-2xl);
+}
+
+.\33xl /* It means 3xl */ {
+  font-size: var(--font-size-3xl);
+}
+
+.\34xl /* It means 4xl */ {
+  font-size: var(--font-size-4xl);
+}
+/* stylelint-enable selector-class-pattern */
+
+.normal {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}

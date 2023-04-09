@@ -1,5 +1,4 @@
-export * from './styles/tokens'
-export * from './styles/GlobalStyles'
+import './styles/tokens.css'
 
 export * from './components/Button'
 export * from './components/Select'

@@ -1,5 +1,5 @@
-import { css } from '@emotion/react'
 import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react'
+import styles from './Text.module.css'
 
 type TextProps<C extends ElementType> = {
   as?: C
@@ -20,43 +20,10 @@ export const Text = <C extends ElementType = 'span'>({
   const Component = as || 'span'
   return (
     <Component
-      css={[styles[size], styles[`${bold ? 'bold' : 'normal'}`]]}
+      className={`${styles[size]} ${styles[`${bold ? 'bold' : 'normal'}`]}`}
       {...elementProps}
     >
       {children}
     </Component>
   )
-}
-
-const styles = {
-  xs: css({
-    fontSize: 'var(--font-size-xs)',
-  }),
-  s: css({
-    fontSize: 'var(--font-size-s)',
-  }),
-  m: css({
-    fontSize: 'var(--font-size-m)',
-  }),
-  l: css({
-    fontSize: 'var(--font-size-l)',
-  }),
-  xl: css({
-    fontSize: 'var(--font-size-xl)',
-  }),
-  '2xl': css({
-    fontSize: 'var(--font-size-2xl)',
-  }),
-  '3xl': css({
-    fontSize: 'var(--font-size-3xl)',
-  }),
-  '4xl': css({
-    fontSize: 'var(--font-size-4xl)',
-  }),
-  normal: css({
-    fontWeight: 400,
-  }),
-  bold: css({
-    fontWeight: 700,
-  }),
 }

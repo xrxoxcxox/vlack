@@ -1,0 +1,63 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  align-self: flex-start;
+  color: var(--color-gray-60);
+  font-family: inherit;
+  font-size: var(--font-size-xs);
+  margin-bottom: 4px;
+}
+
+.errorLabel {
+  color: var(--color-red);
+}
+
+.selectWrapper {
+  display: flex;
+  position: relative;
+}
+
+.select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-color: var(--color-gray-30);
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  color: var(--color-gray-90);
+  flex-grow: 1;
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  padding: 8px 40px 8px 16px;
+}
+
+.select:disabled {
+  background-color: var(--color-gray-20);
+  border-color: transparent;
+  color: var(--color-gray-60);
+  cursor: not-allowed;
+}
+
+.selectArrow {
+  bottom: 0;
+  color: var(--color-gray-60);
+  margin: auto;
+  pointer-events: none;
+  position: absolute;
+  right: 12px;
+  top: 0;
+}
+
+.errorSelect {
+  border-color: var(--color-red);
+}
+
+.errorMessage {
+  color: var(--color-red);
+  font-size: var(--font-size-xs);
+  margin-top: 4px;
+}
