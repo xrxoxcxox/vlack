@@ -40,7 +40,7 @@
     "prebuild": "rimraf dist",
     "prepack": "npm run build",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^7.0.2",
