@@ -13,4 +13,5 @@ module.exports = {
   docs: {
     autodocs: true,
   },
+  staticDirs: [{ from: '../src/styles', to: '/src/styles' }],
 }
