@@ -4,7 +4,7 @@ import { Text } from '../Text'
 
 type InputProps = JSX.IntrinsicElements['input']
 
-export interface Props extends InputProps {
+type Props = InputProps & {
   label?: string
   errorMessage?: string
 }

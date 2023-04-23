@@ -2,7 +2,7 @@ import styles from './Button.module.css'
 
 type ButtonProps = JSX.IntrinsicElements['button']
 
-export interface Props extends ButtonProps {
+type Props = ButtonProps & {
   children: string
   priority?: 'primary' | 'secondary'
 }
