@@ -1,15 +1,16 @@
-import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
+import { StoryObj, Meta } from '@storybook/react'
 
 import { Select } from './Select'
 
-export default {
+const meta: Meta<typeof Select> = {
   title: 'Select',
   component: Select,
   args: {
     disabled: false,
     label: 'Label',
   },
-} as ComponentMeta<typeof Select>
+}
+export default meta
 
 const options = [
   { label: 'not set', value: '', disabled: true },
@@ -18,7 +19,7 @@ const options = [
   { label: 'option 3', value: 3 },
 ]
 
-export const Default: ComponentStoryObj<typeof Select> = {
+export const Default: StoryObj<typeof Select> = {
   args: {
     options: options,
     defaultValue: '',
