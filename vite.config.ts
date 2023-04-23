@@ -8,8 +8,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'cjs'],
-      fileName: (format, entryName) =>
-        `${format}/${entryName}.${format === 'es' ? 'mjs' : 'js'}`,
+      fileName: '[format]/[name]',
     },
     sourcemap: true,
     rollupOptions: {

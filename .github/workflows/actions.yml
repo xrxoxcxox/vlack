@@ -3,6 +3,9 @@ name: Actions
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches:
+      - main
 
 jobs:
   check-for-autosquash-commits:
@@ -24,7 +27,7 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ~/.cache/yarn
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -35,6 +38,7 @@ jobs:
         with:
           eslint: true
           prettier: true
+          stylelint: true
 
   deploy-chromatic:
     needs:
@@ -49,7 +53,7 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ~/.cache/yarn
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}

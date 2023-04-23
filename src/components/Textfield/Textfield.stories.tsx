@@ -1,8 +1,8 @@
-import { ComponentStoryObj, ComponentMeta } from '@storybook/react'
+import { StoryObj, Meta } from '@storybook/react'
 
 import { Textfield } from './Textfield'
 
-export default {
+const meta: Meta<typeof Textfield> = {
   title: 'Textfield',
   component: Textfield,
   args: {
@@ -10,6 +10,7 @@ export default {
     label: 'Label',
     placeholder: 'placeholder',
   },
-} as ComponentMeta<typeof Textfield>
+}
+export default meta
 
-export const Default: ComponentStoryObj<typeof Textfield> = {}
+export const Default: StoryObj<typeof Textfield> = {}

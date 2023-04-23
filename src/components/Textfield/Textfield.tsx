@@ -2,9 +2,7 @@ import { useId } from 'react'
 import styles from './Textfield.module.css'
 import { Text } from '../Text'
 
-type InputProps = JSX.IntrinsicElements['input']
-
-export interface Props extends InputProps {
+type Props = JSX.IntrinsicElements['input'] & {
   label?: string
   errorMessage?: string
 }
