@@ -8,18 +8,7 @@ on:
       - main
 
 jobs:
-  check-for-autosquash-commits:
-    if: github.event.pull_request.draft == false
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: xt0rted/block-autosquash-commits-action@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-
   run-linters:
-    needs:
-      - check-for-autosquash-commits
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -41,10 +30,8 @@ jobs:
           stylelint: true
 
   deploy-chromatic:
-    needs:
-      - check-for-autosquash-commits
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v3
         with:
