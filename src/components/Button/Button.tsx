@@ -1,8 +1,6 @@
 import styles from './Button.module.css'
 
-type ButtonProps = JSX.IntrinsicElements['button']
-
-type Props = ButtonProps & {
+type Props = JSX.IntrinsicElements['button'] & {
   children: string
   priority?: 'primary' | 'secondary'
 }

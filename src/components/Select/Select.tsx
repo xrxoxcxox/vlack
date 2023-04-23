@@ -2,9 +2,7 @@ import { useId } from 'react'
 import styles from './Select.module.css'
 import { Text } from '../Text'
 
-type SelectProps = JSX.IntrinsicElements['select']
-
-type Props = SelectProps & {
+type Props = JSX.IntrinsicElements['select'] & {
   label?: string
   errorMessage?: string
   options: JSX.IntrinsicElements['option'][]
